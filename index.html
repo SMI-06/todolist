@@ -86,8 +86,16 @@
     }
     window.addEventListener("load", () => {
         if (!sessionStorage.getItem("currentUser")) {
-            Swal.fire("Please Log In");
+            Swal.fire({
+                icon: "warning",
+                title: "Login First",
+                showConfirmButton: false,
+                timer: 1000
+            });
             document.getElementById('showtasks').innerHTML = ""
+            setTimeout(function () {
+                location.href = "login.html"
+            }, 1001);
         }
     });
 </script>
