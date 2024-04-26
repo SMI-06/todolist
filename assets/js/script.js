@@ -107,6 +107,24 @@ function addtask() {
     }
 }
 
+
+// SHOWING TODO LIST WORK
+var showToDoList = document.getElementById('showToDoList')
+let getToDOListItem = JSON.parse(localStorage.getItem("todoLists"))
+showToDoList.innerHTML = `<ul class="list-group list-group-flush">
+<li class="list-group-item">Task Name: ${getToDOListItem.userName} </li>
+<li class="list-group-item">Task Name: ${getToDOListItem.taskName} </li>
+<li class="list-group-item">Task Date: ${getToDOListItem.taskDate}</li>
+<li class="list-group-item">
+    <a href="#"> 
+        <span class="btn btn-warning"><i class="bi bi-pen"></i></span> 
+    </a>
+    <a href="#"> 
+        <span class="btn btn-danger"><i class="bi bi-trash2-fill"></i></span>
+    </a>
+</li>
+</ul>`
+
 //  Logout Function
 function Logout() {
     Swal.fire("Warning", "Are you sure want to logout?", "question").then(
@@ -118,6 +136,3 @@ function Logout() {
         }
     );
 }
-
-{/* <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> */ }
-
